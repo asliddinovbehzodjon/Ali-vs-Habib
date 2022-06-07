@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="container mt-3 is-mobile">
+        <div class="columns">
+            <div class="column is-4 is-offset-4">
+           <div class="has-text-centered">
+            <h1 class="title">Register Page</h1>
+            <form method="POST">
+{% csrf_token %}
+                <div class="fields">
+                    <label for="" class="label">Username</label>
+                    <div class="control">
+                        <input type="text" name="username" id="" class="input"  placeholder="Enter Username">
+                    </div>
+                </div>
+
+                <div class="fields mt-2">
+                    <label for="" class="label">Password</label>
+                    <div class="control">
+                        <input type="password" name="password" id="" class="input"  placeholder="******">
+                    </div>
+                </div>
+
+                <div class="fields mt-2">
+                    <label for="" class="label"> Repeat Password</label>
+                    <div class="control">
+                        <input type="password" name="password2" id="" class="input"  placeholder="******">
+                    </div>
+                </div>
+              
+                   
+                   
+        
+                {% for message in messages %}
+                <div class="notification is-danger mt-3">
+                    {{message}}
+                </div>
+                  
+                {% endfor %}                       
+                        
+                   
+                  </div>
+                <div class="has-text-centered">
+                    <h1 class="">If you are registered go to 
+                        <a href="/login"><span>Login</span></a> page
+                    </h1>
+                </div>
+                <div class="fields mt-2">
+                    
+                    <div class="control has-text-centered">
+                        <button class="button is-success">Register</button>
+                    </div>
+                </div>
+
+            </form>
+           </div>
+            </div>
+
+        </div>
+
+    </div>
+  </body>
+</html>
